@@ -1,4 +1,4 @@
-Creating Sets of Pairs
+/*Creating Sets of Pairs
 Example: Making pairs of all even numbers present in an array.
 
 Input: 2 3 1 6 5 8 10 9
@@ -12,22 +12,11 @@ Output: (24, 24)
 
 Input: 7, 100, 53, 81
 Output: No valid pair
+*/
+
 #include<bits/stdc++.h> 
 using namespace std;
 
-void display(const set<pair<int,int>> &s) 
-{ 
-    bool found = false; 
-    for (auto const &x : s) { 
-        found = true; 
-        cout << "(" << x.first << ", "
-             << x.second << ")"
-             << " "; 
-    } 
-    if (not found) { 
-        cout << "No valid pair\n"; 
-    } 
-} 
 int main(){
      vector<int> v{ 2, 3, 1, 6, 8, 8, 10, 2};     
      set<pair<int,int>> s;
@@ -39,10 +28,18 @@ int main(){
                }
           }
      }
-     display(s);
+     bool found = false;
+     for(auto const &x : s){
+          found = true;
+          cout << "(" << x.first << ", " << x.second << ")" << " ";
+
+     }
+     if(not found){
+          cout << "No valid pair\n";
+     }
 
      return 0;
-}  
+} 
 
 
 /*
